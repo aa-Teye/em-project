@@ -1,0 +1,740 @@
+/* General Reset */
+* {
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #f1f1f1;
+    color: #333;
+    padding-top: 100px; /* Adjust to the combined height of top-menu and navbar */
+}
+
+/* Top Menu */
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #37BFFA;
+    padding: 10px 20px;
+    align-items: center;
+    position: fixed; /* Make top-menu fixed */
+    top: 0;  /* Sticks top-menu to the top */
+    left: 0;
+    width: 100%;  /* Ensure it spans the full width */
+    height: 50px;
+    z-index: 1000;  /* Keeps top-menu above navbar */
+}
+
+.email {
+    color: #ffffff;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-items a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 5px 5px;
+}
+
+.menu-items a:hover {
+    background-color: #ddd;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #F4F4F4;
+    position: fixed;  /* Make navbar fixed */
+    top: 60px;  /* Position navbar below the top-menu */
+    left: 0;
+    width: 100%;  /* Ensure it spans the full width */
+    z-index: 1000;  /* Keeps navbar below top-menu */
+    margin-top: -10px;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 60px;
+    height: auto;
+    margin-right: 10px; /*Add space between logo and text*/
+}
+
+.logo-text {
+    text-align: left;
+}
+
+.european {
+    font-size: 1em;
+    font-weight: bold;
+    color: #000
+}
+
+.missions {
+    font-size: 1em;
+    color: #000;
+    display: block;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Menu Styles */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu li {
+    margin: 0 10px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.menu li:first-child {
+    border-left: none;
+}
+
+.menu li:last-child {
+    border-right: none;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #000;
+    text-align: center;
+}
+
+.menu a:hover {
+    color: #ffffff;
+    background-color: #227AAD;
+}
+
+/* Mobile Styles (Hamburger Menu) */
+@media (max-width: 768px) {
+    .top-menu ul {
+        justify-content: flex-start;
+    }
+
+    .top-menu li {
+        margin-left: 10px;
+    }
+
+    .top-menu a {
+        font-size: 12px;
+    }
+
+    .navbar {
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        background-color: #F4F4F4;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1;
+        padding: 0;
+    }
+
+    .menu.show {
+        display: block;
+    }
+
+    .menu ul {
+        display: block;
+        padding: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+        background-color: #ddd;
+        padding-left: 20px;
+    }
+
+    .menu a {
+        padding: 15px;
+        display: block;
+        text-align: left;
+    }
+
+    .actions {
+        display: none;
+    }
+
+    .search-text {
+        display: inline;
+    }
+
+    .search-icon {
+        display: none;
+    }
+}
+
+
+
+/* Mission & Vision Section */
+.mission-vision-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    padding: 50px 0;
+    text-transform: none;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    justify-content: space-between;
+    border-radius: 20px;
+    overflow: hidden;
+    text-transform: none;
+}
+
+/* Vision and Mission Section */
+.vision, .mission {
+    width: 48%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Vision Section Styling */
+.vision h2, .mission h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.vision p, .mission p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Hover effect */
+.vision:hover, .mission:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .vision, .mission {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling for the Give button */
+.menu li.give a {
+    background-color: #0a3d91;
+    color: white;
+    text-align: center;
+}
+
+.menu li.give a:hover {
+    background-color: white;
+    color: #0a3d91;
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    width: auto;
+    margin-top: 30px;
+}
+
+/* Static Image */
+.static-image {
+    width: 50%;
+    background-color: #1B628A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.static-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Sliding Image */
+.sliding-image {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    background-color: #1B628A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliding-image .slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 300%;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Navigation Arrow Styles */
+.sliding-image .prev, .sliding-image .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.sliding-image .prev {
+    left: 10px;
+}
+
+.sliding-image .next {
+    right: 10px;
+}
+
+.sliding-image .prev:hover, .sliding-image .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Optional: Borders between static and sliding images */
+.image-container .static-image, .image-container .sliding-image {
+    border-right: 2px solid #ddd;
+}
+
+/* Container for the image and information */
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 100px;
+}
+
+/* Styling each column */
+.row .col {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Image styling */
+.col img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Styling for the text content */
+.text-content {
+    max-width: 300px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    text-transform: none;
+}
+
+/* Heading and Paragraph Styling */
+.text-content h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+.text-content p {
+    font-size: 0.65rem;
+    color: #555;
+    margin: 10px 0;
+    text-transform:none;
+}
+
+/* Button Styling */
+.ctn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.ctn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content {
+        max-width: 90%;
+    }
+}
+
+/* Vision and Mission Section */
+.mission-vision-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('path_to_background_image.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    margin-top: -100px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 1; /* Ensure text is above the background */
+}
+
+/* Vision and Mission Section */
+.vision, .mission {
+    width: 48%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.7); /* Glass-like transparency */
+    border-radius: 10px;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glass effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Heading Styling */
+.vision h2, .mission h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Paragraph Styling */
+.vision p, .mission p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+    text-transform: none;
+}
+
+/* Hover effect */
+.vision:hover, .mission:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .vision, .mission {
+        width: 100%;
+    }
+}
+/* Add transition effects when sections become visible */
+.mission, .vision {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Class added when the section is revealed during scroll */
+.mission.show, .vision.show {
+    opacity: 1;
+}
+
+
+/* Blue container background */
+.blue-container {
+    background-color: #1E3A8A; /* Deep blue color */
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Each content item */
+.content-item {
+    background-color: #fff; /* White background for each section */
+    border-radius: 8px;
+    padding: 20px;
+    width: 23%; /* Adjust to fit side by side */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-transform:none ;
+}
+
+/* Icon styling */
+.icon {
+    font-size: 3em;
+    color: #1E3A8A; /* Blue color for icons */
+    margin-bottom: 15px;
+}
+
+/* Text styling */
+.text h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.text p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+.text a {
+    font-size: 1.1em;
+    color: #1E3A8A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-item {
+        width: 100%; /* Stacks items vertically on small screens */
+    }
+}
+
+/* Footer container */
+footer {
+    background-color: #2C3E50;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  /* The footer content container */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;  /* Center align all sections within the container */
+  }
+  
+  /* Individual footer section */
+  .footer-section {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    text-align: center; /* Center align content within each section */
+  }
+  
+  /* Section titles */
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ecf0f1;
+    font-weight: 600;
+  }
+  
+  /* Contact Info */
+  .footer-section.contact-info p {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #bdc3c7;
+    text-align: center; /* Center text within the paragraph */
+  }
+  
+  /* Subscribe form elements */
+  .footer-section.subscribe input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px; /* Keeps the form input from becoming too wide */
+    margin-bottom: 5px;
+    border: 1px solid #bdc3c7;
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center; /* Center text inside the input field */
+  }
+  
+  .footer-section.subscribe button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .footer-section.subscribe button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* PayPal links styling */
+  .footer-section .paypal-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center; /* Center-align the PayPal links */
+  }
+  
+  .footer-section .paypal-links li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section .paypal-links a {
+    text-decoration: none;
+    color: #ecf0f1;
+  }
+  
+  .footer-section .paypal-links a:hover {
+    color: #3498db;
+  }
+  
+  /* Podbean links styling */
+  .footer-section .podbean-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center; /* Center-align the Podbean links */
+  }
+  
+  .footer-section .podbean-links li {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-section .podbean-links a {
+    text-decoration: none;
+    color: #ecf0f1;
+  }
+  
+  .footer-section .podbean-links a:hover {
+    color: #3498db;
+  }
+  
+  /* Social media links styling */
+  .footer-section .social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    margin-top: 10px;
+  }
+  
+  .footer-section .social-links li {
+    display: inline-block;
+  }
+  
+  .footer-section .social-links li a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .footer-section .social-links li a:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-section {
+      margin-bottom: 20px;
+      text-align: center; /* Center content on smaller screens */
+    }
+  
+    .footer-section input {
+      width: 80%;
+    }
+  
+    .footer-section .social-links {
+      justify-content: center;
+      margin-top: 15px;
+    }
+  
+    .footer-section .podbean-links {
+      justify-content: center;
+      margin-top: 15px;
+    }
+  }
